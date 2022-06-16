@@ -90,6 +90,17 @@ class Time(commands.Cog):
                     inline=True,
                 )
 
+
+        unix_timestamp = int(datetime.utcnow().timestamp())
+        embed.add_field(
+            name="Discord Timecodes",
+            value=(
+                f"`<t:{unix_timestamp}:f>` (<t:{unix_timestamp}:f>)" "\n"
+                f"`<t:{unix_timestamp}:T>` (<t:{unix_timestamp}:T>)"
+            ),
+            inline=False,
+        )
+
         # Add url to the timezones module
         timezones_url = get_site_url() + reverse("timezones:index")
 

@@ -111,14 +111,6 @@ class Time(commands.Cog):
 
         return embed
 
-    @commands.command(pass_context=True)
-    async def time(self, ctx):
-        """
-        Returns the Eve time and the current time in various time zones
-        """
-
-        return await ctx.send(embed=self.show_timezones(deprecated_command_used=True))
-
     @commands.slash_command(name="time", guild_ids=[int(settings.DISCORD_GUILD_ID)])
     async def time_slash(self, ctx):
         """
